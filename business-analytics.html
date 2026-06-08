@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arbor Business Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="business-nav">
+    <button onclick="window.location.href='business.html'">Dashboard</button>
+    <button onclick="window.location.href='business-journal.html'">Journal</button>
+    <button onclick="window.location.href='business-ledger.html'">Ledger</button>
+    <button onclick="window.location.href='business-trial.html'">Trial Balance</button>
+    <button onclick="window.location.href='business-finalaccounts.html'">Final Accounts</button>
+    <button style="background:#374151;">Analytics</button>
+</div>
+
+<div class="container">
+
+    <h1 style="margin-bottom:20px;">Business Analytics</h1>
+
+    <div class="card">
+        <h2>Advanced Ratios</h2>
+
+        <div class="metrics">
+
+            <div class="metric">
+                <span>Return on Assets (ROA)</span>
+                <strong id="roaValue">0%</strong>
+            </div>
+
+            <div class="metric">
+                <span>Debt Ratio</span>
+                <strong id="debtRatioValue">0%</strong>
+            </div>
+
+            <div class="metric">
+                <span>Asset Turnover</span>
+                <strong id="assetTurnoverValue">0</strong>
+            </div>
+
+            <div class="metric">
+                <span>Liability to Capital Ratio</span>
+                <strong id="lcRatioValue">0</strong>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="business.js"></script>
+
+</body>
+</html>

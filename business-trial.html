@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trial Balance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="business-nav">
+    <button onclick="window.location.href='business.html'">Dashboard</button>
+    <button onclick="window.location.href='business-journal.html'">Journal</button>
+    <button onclick="window.location.href='business-ledger.html'">Ledger</button>
+    <button onclick="window.location.href='business-trial.html'">Trial Balance</button>
+    <button onclick="window.location.href='business-finalaccounts.html'">Final Accounts</button>
+    <button onclick="window.location.href='business-analytics.html'">Analytics</button>
+</div>
+<div class="container">
+<h1 style="margin-bottom:20px;">Trial Balance</h1>
+    <div class="topbar">
+        <div class="brand">Arbor – Trial Balance</div>
+        <div>
+            <a href="business-journal.html">Journal</a> |
+            <a href="business-ledger.html">Ledger</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Trial Balance</h2>
+
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th>Sl.No.</th>
+                    <th>Heads of Accounts</th>
+                    <th>Debit Balance</th>
+                    <th>Credit Balance</th>
+                </tr>
+            </thead>
+            <tbody id="trialTableBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script type="module" src="business.js"></script>
+</body>
+</html>

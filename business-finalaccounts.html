@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Accounts - Arbor Business</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="business-nav">
+    <button onclick="window.location.href='business.html'">Dashboard</button>
+    <button onclick="window.location.href='business-journal.html'">Journal</button>
+    <button onclick="window.location.href='business-ledger.html'">Ledger</button>
+    <button onclick="window.location.href='business-trial.html'">Trial Balance</button>
+    <button onclick="window.location.href='business-finalaccounts.html'">Final Accounts</button>
+    <button onclick="window.location.href='business-analytics.html'">Analytics</button>
+</div>
+<div class="container">
+<h1 style="margin-bottom:20px;">Final Accounts</h1>
+    
+
+    <!-- ============================= -->
+    <!-- 🔹 STOCK INPUT SECTION -->
+    <!-- ============================= -->
+
+    <div class="card">
+        <h2>Stock Inputs</h2>
+
+        <label>Opening Stock:</label>
+        <input type="number" id="openingStockInput" placeholder="Enter Opening Stock">
+
+        <label>Closing Stock:</label>
+        <input type="number" id="closingStockInput" placeholder="Enter Closing Stock">
+
+        <button id="calculateFinalBtn">Generate Final Accounts</button>
+    </div>
+
+    <!-- ============================= -->
+    <!-- 🔹 TRADING ACCOUNT -->
+    <!-- ============================= -->
+
+    <div class="card">
+        <h2>Trading Account</h2>
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th>Debit (₹)</th>
+                    <th>Amount</th>
+                    <th>Credit (₹)</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="tradingBody"></tbody>
+        </table>
+    </div>
+
+    <!-- ============================= -->
+    <!-- 🔹 PROFIT & LOSS ACCOUNT -->
+    <!-- ============================= -->
+
+    <div class="card">
+        <h2>Profit & Loss Account</h2>
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th>Debit (₹)</th>
+                    <th>Amount</th>
+                    <th>Credit (₹)</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="plBody"></tbody>
+        </table>
+    </div>
+
+    <!-- ============================= -->
+    <!-- 🔹 BALANCE SHEET -->
+    <!-- ============================= -->
+
+    <div class="card">
+        <h2>Balance Sheet</h2>
+        <table class="ledger-table">
+            <thead>
+                <tr>
+                    <th>Liabilities (₹)</th>
+                    <th>Amount</th>
+                    <th>Assets (₹)</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="balanceSheetBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script type="module" src="business-finalaccounts.js"></script>
+
+</body>
+</html>

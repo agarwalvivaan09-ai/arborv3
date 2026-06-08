@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="main-header">
+
+    <div class="header-left">
+        <div id="activeProfileName">Personal Account</div>
+    </div>
+
+    <div class="header-center">
+        <h1 class="logo-large">AR</h1>
+    </div>
+
+<div class="header-right">
+    <button onclick="window.location.href='dashboard.html'" class="header-link">
+        ← Dashboard
+    </button>
+
+    <button onclick="window.location.href='personal-methodology.html'" class="header-link">
+        How It Works
+    </button>
+
+    <button id="logoutBtnHeader" class="header-logout">
+        Sign Out
+    </button>
+</div>
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>Core Advanced Metrics</h2>
+
+<div class="metrics">
+
+<div class="metric">
+<span>Savings Rate</span>
+<strong id="savingsRate"></strong>
+</div>
+
+<div class="metric">
+<span>Debt-to-Income</span>
+<strong id="dtiValue"></strong>
+</div>
+
+<div class="metric">
+<span>Emergency Coverage</span>
+<strong id="emergencyCoverage"></strong>
+</div>
+
+<div class="metric">
+<span>Debt-to-Asset Ratio</span>
+<strong id="debtAssetValue"></strong>
+</div>
+
+<div class="metric">
+<span>Financial Resilience Index (FRI)</span>
+<strong id="friValue"></strong>
+</div>
+
+<div class="metric">
+<span>Financial Independence Score (FIS)</span>
+<strong id="fisValue"></strong>
+</div>
+
+<div class="metric">
+<span>Liquidity Ratio</span>
+<strong id="liquidityRatio">-</strong>
+</div>
+
+<div class="metric">
+<span>Solvency Ratio</span>
+<strong id="solvencyRatio">-</strong>
+</div>
+
+<div class="metric">
+<span>Leverage Ratio</span>
+<strong id="leverageRatio">-</strong>
+</div>
+
+<div class="metric">
+<span>Burn Rate</span>
+<strong id="burnRate">-</strong>
+</div>
+<div class="metric">
+<span>Effective Tax Rate</span>
+<strong id="effectiveTax"></strong>
+</div>
+
+<div class="metric">
+<span>After-Tax Income</span>
+<strong id="afterTaxIncomeValue"></strong>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Stress Simulation</h2>
+
+<label>Income Shock %</label>
+<input type="range" id="incomeShockSlider" min="0" max="60" value="0">
+
+<label>Expense Shock %</label>
+<input type="range" id="expenseShockSlider" min="0" max="60" value="0">
+
+<div class="metrics" style="margin-top:20px;">
+
+    <div class="metric">
+        <span>Stress FRI</span>
+        <strong id="stressFriValue">0</strong>
+    </div>
+<div class="metric">
+<span>Stressed Monthly Income</span>
+<strong id="stressedIncome"></strong>
+</div>
+
+<div class="metric">
+<span>Stressed Monthly Expense</span>
+<strong id="stressedExpense"></strong>
+</div>
+
+<div class="metric">
+<span>Months Survivable</span>
+<strong id="stressedSurvival"></strong>
+</div>
+    <div class="metric">
+        <span>Shock Retention</span>
+        <strong id="shockRetentionValue">0%</strong>
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="card">
+<h2>Monte Carlo Net Worth Simulation (5 Years)</h2>
+
+<div class="metrics">
+
+<div class="metric">
+<span>Probability of Net Worth Growth</span>
+<strong id="mcProbability">-</strong>
+</div>
+
+<div class="metric">
+<span>Probability of Insolvency</span>
+<strong id="insolvencyProbability">-</strong>
+</div>
+<div class="metric">
+<span>Median Final Net Worth</span>
+<strong id="mcMedian"></strong>
+</div>
+
+<div class="metric">
+<span>Worst Case (5%)</span>
+<strong id="mcWorst"></strong>
+</div>
+
+<div class="metric">
+<span>Best Case (95%)</span>
+<strong id="mcBest"></strong>
+</div>
+<div class="metric">
+    <span>Probability of Decline</span>
+    <strong id="mcDecline"></strong>
+</div>
+</div>
+
+<canvas id="mcChart" height="250"></canvas>
+<canvas id="mcLineChart" height="120"></canvas>
+
+</div>
+
+
+
+</div>
+
+<script type="module" src="personal-analytics.js"></script>
+</body>
+</html>

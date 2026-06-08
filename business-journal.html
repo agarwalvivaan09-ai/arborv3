@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arbor Business – Journal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="business-nav">
+    <button onclick="window.location.href='business.html'">Dashboard</button>
+    <button onclick="window.location.href='business-journal.html'">Journal</button>
+    <button onclick="window.location.href='business-ledger.html'">Ledger</button>
+    <button onclick="window.location.href='business-trial.html'">Trial Balance</button>
+    <button onclick="window.location.href='business-analytics.html'">Analytics</button>
+    <button onclick="window.location.href='business-finalaccounts.html'">Final Accounts</button>
+</div>
+<div class="container">
+
+    <div class="topbar">
+        <div class="top-left">
+            <div class="brand">Arbor – BUSINESS</div>
+        </div>
+        <div class="top-right">
+            <a href="business-ledger.html">Ledger</a> |
+            <a href="business-finalaccounts.html">Final Accounts</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Journal Entry</h2>
+
+        <input type="date" id="journalDate">
+
+        <select id="debitAccount">
+            <option value="">Select Debit Account</option>
+        </select>
+
+        <select id="creditAccount">
+            <option value="">Select Credit Account</option>
+        </select>
+
+        <input type="number" id="journalAmount" placeholder="Amount">
+
+        <button id="addJournalBtn">Add Entry</button>
+    </div>
+
+    <div class="card ledger-card">
+        <h2>Journal Book</h2>
+
+        <table class="ledger-table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Particulars</th>
+            <th>L.F.</th>
+            <th>Debit (₹)</th>
+            <th>Credit (₹)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="journalList"></tbody>
+</table>
+    </div>
+
+</div>
+
+<script type="module" src="business.js"></script>
+
+</body>
+</html>

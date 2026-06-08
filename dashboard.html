@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arbor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header class="main-header">
+
+    <div class="header-left">
+        <div id="activeProfileName">Personal Account</div>
+    </div>
+
+    <div class="header-center">
+        <h1 class="logo-large">AR</h1>
+    </div>
+<div class="header-right">
+    <span>Signed in as: <span id="userEmail"></span></span>
+
+    <button onclick="window.location.href='stocks.html'" class="header-link">
+        Stock Portfolio
+    </button>
+
+    <button onclick="window.location.href='personal-analytics.html'" class="header-link">
+        Deep Analytics
+    </button>
+
+    <button id="logoutBtnHeader" class="header-logout">
+        Sign Out
+    </button>
+</div>
+
+</header>
+<body>
+
+    <div class="container">
+        <div class="side-panel" id="sidePanel">
+    <div class="panel-content">
+        <div class="panel-header">
+    <span>Add Transaction</span>
+    <span id="closePanelBtn" class="close-icon">×</span>
+</div>
+        <h2>Add Transaction</h2>
+
+        <input type="number" id="amountInput" placeholder="Amount">
+        <select id="typeInput">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+        <input type="text" id="categoryInput" placeholder="Category">
+        <input type="date" id="dateInput">
+
+        <button id="addBtn">Add Transaction</button>
+
+        <hr style="margin:20px 0; opacity:0.2;">
+
+<h3 style="margin-bottom:10px;">Add Liability</h3>
+
+<input type="text" id="liabilityType" placeholder="Type (e.g. Loan)">
+<input type="number" id="principalInput" placeholder="Principal Remaining">
+<input type="number" id="interestInput" placeholder="Interest Rate %">
+<input type="number" id="monthlyPaymentInput" placeholder="Monthly Payment">
+<select id="liabilityCompounding">
+    <option value="simple">Simple Interest</option>
+    <option value="compound">Compound Interest</option>
+</select>
+
+<button id="addLiabilityBtn">Add Liability</button>
+
+<hr style="margin:20px 0; opacity:0.2;">
+
+<h3 style="margin-bottom:10px;">Add Asset</h3>
+
+<input type="text" id="assetType" placeholder="Asset Type">
+<input type="number" id="assetValue" placeholder="Current Value">
+<input type="number" id="growthRate" placeholder="Growth Rate %">
+<select id="assetCategory">
+    <option value="general">General</option>
+    <option value="stock">Stock</option>
+    <option value="real_estate">Real Estate</option>
+</select>
+
+<button id="addAssetBtn">Add Asset</button>
+<hr style="margin:20px 0; opacity:0.2;">
+
+<h3 style="margin-bottom:10px;">Tax Settings</h3>
+
+<input type="number" id="taxRateInput" placeholder="Tax Rate %" />
+
+<button id="saveTaxBtn">Save Tax Rate</button>
+    </div>
+</div>
+    
+</div>
+<div class="action-row">
+    <button id="openPanelBtn" class="primary-btn">
+        + Add Transaction
+    </button>
+
+    <button onclick="window.location.href='personal-analytics.html'" class="secondary-btn">
+        Deep Analytics →
+    </button>
+</div>
+<div class="card">
+<h2>Financial Goals</h2>
+
+<input type="text" id="goalName" placeholder="Goal (e.g. ₹10L)">
+<input type="number" id="goalAmount" placeholder="Target Amount">
+
+<button id="addGoalBtn">Add Goal</button>
+
+<div id="goalList"></div>
+</div>
+        <div class="card summary-card">
+            <h2>Financial Overview</h2>
+            <p id="overviewEmail" style="color:#9ca3af; font-size:13px; margin-top:-10px;"></p>
+            <div class="metrics">
+                <div class="metric">
+                    <span>Income</span>
+                    <strong id="totalIncome">₹ 0</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Expense</span>
+                    <strong id="totalExpense">₹ 0</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Net</span>
+                    <strong id="netFlow">₹ 0</strong>
+                </div>
+                
+                <div class="metric">
+                    <span>Cash Balance</span>
+                    <strong id="cashBalance">₹ 0</strong>
+                </div>
+
+                
+
+
+<div class="metric">
+    <span>Total Debt</span>
+    <strong id="totalDebt">₹ 0</strong>
+</div>
+
+<div class="metric">
+    <span>Monthly Debt Payment</span>
+    <strong id="monthlyDebt">₹ 0</strong>
+</div>
+                
+
+                <div class="metric">
+                    <span>Status</span>
+                    <strong id="financialStatus">-</strong>
+                </div>
+
+          
+<div class="metric">
+    <span>Disposable Income</span>
+    <strong id="disposableIncome">₹ 0</strong>
+</div>
+<div class="metric">
+    <span>Net Worth</span>
+    <strong id="netWorthValue">₹ 0</strong>
+</div>
+             
+            </div>
+             
+        </div>
+
+       
+            
+
+        <div class="card ledger-card">
+    <h2>Ledger</h2>
+
+    <table class="ledger-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="transactionList">
+        </tbody>
+    </table>
+</div>
+
+<div class="card ledger-card">
+    <h2>Assets</h2>
+
+    <table class="ledger-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Value</th>
+                <th>Growth %</th>
+            
+            </tr>
+        </thead>
+        <tbody id="assetList">
+        </tbody>
+    </table>
+</div>
+
+<div class="card ledger-card">
+    <h2>Liabilities</h2>
+
+    <table class="ledger-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Principal</th>
+                <th>Interest %</th>
+                <th>Monthly Payment</th>
+            
+            </tr>
+        </thead>
+        <tbody id="liabilityList">
+        </tbody>
+    </table>
+</div>
+
+
+        
+
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>

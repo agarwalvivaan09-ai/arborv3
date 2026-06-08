@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arbor Business Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="business-nav">
+    <button onclick="window.location.href='business.html'">Dashboard</button>
+    <button onclick="window.location.href='business-journal.html'">Journal</button>
+    <button onclick="window.location.href='business-ledger.html'">Ledger</button>
+    <button onclick="window.location.href='business-trial.html'">Trial Balance</button>
+    <button onclick="window.location.href='business-analytics.html'">Analytics</button>
+    <button onclick="window.location.href='business-finalaccounts.html'">Final Accounts</button>
+</div>
+    <div class="container">
+        <div class="side-panel" id="sidePanel">
+    <div class="panel-content">
+        <h2>Add Revenue / Expense</h2>
+
+        <input type="number" id="amountInput" placeholder="Amount">
+        <select id="typeInput">
+            <option value="income">Revenue</option>
+            <option value="expense">Operating Expense</option>
+        </select>
+        <input type="text" id="categoryInput" placeholder="Category">
+        <input type="date" id="dateInput">
+
+        <button id="addBtn">Add Transaction</button>
+        <button id="closePanelBtn" class="secondary-btn">Cancel</button>
+
+        <hr style="margin:20px 0; opacity:0.2;">
+
+<h3 style="margin-bottom:10px;">Add Business Debt</h3>
+
+<input type="text" id="liabilityType" placeholder="Type (e.g. Loan)">
+<input type="number" id="principalInput" placeholder="Principal Remaining">
+<input type="number" id="interestInput" placeholder="Interest Rate %">
+<input type="number" id="monthlyPaymentInput" placeholder="Monthly Payment">
+
+<button id="addLiabilityBtn">Add Business Debt</button>
+
+<hr style="margin:20px 0; opacity:0.2;">
+
+<h3 style="margin-bottom:10px;">Add Business Asset</h3>
+
+<input type="text" id="assetType" placeholder="Asset Type">
+<input type="number" id="assetValue" placeholder="Current Value">
+<input type="number" id="growthRate" placeholder="Growth Rate %">
+
+<button id="addAssetBtn">Add Business Asset</button>
+    </div>
+</div>
+     <div class="topbar">
+
+    <div class="top-left">
+        <div class="brand">Arbor – BUSINESS</div>
+        <div class="active-profile" id="activeProfileName"></div>
+    </div>
+
+    <div class="top-right">
+        <button id="openPanelBtn" class="primary-action">
+            + Add Transaction
+        </button>
+        
+    </div>
+
+</div>
+
+
+
+    <div class="brand">Arbor</div>
+    <div class="user" id="userEmail"></div>
+</div>
+        <div class="card summary-card">
+            <h2>Financial Overview</h2>
+            <p id="overviewEmail" style="color:#9ca3af; font-size:13px; margin-top:-10px;"></p>
+         <div class="metrics">
+
+    <div class="metric">
+        <span>Total Revenue</span>
+        <strong id="totalRevenue">₹ 0</strong>
+    </div>
+
+    <div class="metric">
+        <span>Total Expenses</span>
+        <strong id="totalBusinessExpense">₹ 0</strong>
+    </div>
+
+    <div class="metric">
+        <span>Net Profit</span>
+        <strong id="netProfit">₹ 0</strong>
+    </div>
+
+    <div class="metric">
+        <span>Profit Margin</span>
+        <strong id="profitMargin">0%</strong>
+    </div>
+
+    <div class="metric">
+        <span>Cash Balance</span>
+        <strong id="businessCash">₹ 0</strong>
+    </div>
+
+    <div class="metric">
+        <span>Net Worth</span>
+        <strong id="netWorth">₹ 0</strong>
+    </div>
+
+</div>
+        </div>
+
+        
+            
+
+        <div class="card ledger-card">
+    <h2>Recent Transactions</h2>
+
+    <table class="ledger-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Revenue / Expense</th>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="transactionList">
+        </tbody>
+    </table>
+</div>
+
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+
+    </div>
+
+    <script type="module" src="business.js"></script>
+
+</body>
+</html>

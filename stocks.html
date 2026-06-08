@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">Stock Portfolio</div>
+
+    <div class="header-right">
+        <button onclick="window.location.href='dashboard.html'" class="header-link">
+            ← Dashboard
+        </button>
+        <button onclick="window.location.href='personal-analytics.html'" class="header-link">
+            Deep Analytics
+        </button>
+        <button id="logoutBtnHeader" class="header-logout">
+            Sign Out
+        </button>
+    </div>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>Add Stock</h2>
+<select id="exchangeInput">
+    <option value="US">US (NYSE / NASDAQ)</option>
+    <option value="NSE">India (NSE)</option>
+    <option value="BSE">India (BSE)</option>
+</select>
+    <input type="text" id="tickerInput" placeholder="Ticker (e.g. TCS)">
+    <input type="number" id="quantityInput" placeholder="Quantity">
+    <input type="number" id="purchasePriceInput" placeholder="Purchase Price">
+   
+
+    <button id="addStockBtn">Add Stock</button>
+    <button id="refreshStocksBtn" class="primary-btn">
+    Refresh Market Prices
+</button>
+</div>
+
+<div class="card">
+    <h2>Your Stocks</h2>
+    <table class="ledger-table">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Quantity</th>
+                <th>Value</th>
+                <th>Return %</th>
+            </tr>
+        </thead>
+        <tbody id="stockList"></tbody>
+    </table>
+</div>
+
+</div>
+
+<script type="module" src="stocks.js"></script>
+</body>
+</html>
